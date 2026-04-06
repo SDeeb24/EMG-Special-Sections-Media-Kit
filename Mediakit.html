@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essex Media Group — Special Supplements Media Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   ESSEX MEDIA GROUP — ANNUAL CONFIG
+   Update this section each year. Everything on the page
+   is driven from these values — no need to edit the HTML.
+   ============================================================ */
+
+const CONFIG = {
+
+  year: "2026",
+
+  /* --- DISTRIBUTION (shared across most supplements) --- */
+  dist: {
+    marblehead: { name: "Marblehead Weekly News", copies: "8,700 homes & 950 businesses" },
+    peabody:    { name: "Peabody Weekly News",    copies: "5,600 homes" },
+    lynnfield:  { name: "Lynnfield Weekly News",  copies: "5,500 homes" },
+    item:       { name: "The Daily Item",          copies: "4,000 copies across 7 North Shore communities" },
+  },
+
+  /* --- BRAIN TEASERS --- */
+  brainTeasers: {
+    schedule: [
+      { edition: "Spring", deadline: "Jan 27, 2026", distro: "Feb 5, 2026" },
+      { edition: "Summer", deadline: "Jul 24, 2026", distro: "Aug 6, 2026" },
+      { edition: "Fall",   deadline: "Oct 9, 2026",  distro: "Oct 22, 2026" },
+    ],
+    rates: [
+      { name: "Full Page",         dim: "9.5″ w × 9.5″ h", price: "$750" },
+      { name: "½ Page Horizontal", dim: "9.5″ w × 4.7″ h", price: "$395" },
+      { name: "½ Page Vertical",   dim: "4.7″ w × 9.5″ h", price: "$395" },
+      { name: "¼ Page",            dim: "9.5″ w × 2.2″ h",  price: "$225" },
+    ],
+  },
+
+  /* --- SENIOR ACTIVE LIVING --- */
+  seniorLiving: {
+    schedule: [
+      { edition: "Spring", deadline: "Mar 21, 2026", distro: "Apr 3, 2026" },
+      { edition: "Summer", deadline: "Jul 7, 2026",  distro: "Jul 17, 2026" },
+      { edition: "Fall",   deadline: "Sep 26, 2026", distro: "Oct 9, 2026" },
+      { edition: "Winter", deadline: "Dec 8, 2026",  distro: "Dec 18, 2026" },
+    ],
+    packages: [
+      { tier: "platinum", label: "Platinum", name: "Full page ad + full page story", words: "1,100", dim: "9.5″ × 9.5″", price: "$1,250" },
+      { tier: "gold",     label: "Gold",     name: "½ page ad + ½ page story",       words: "550",   dim: "9.5″ × 4.7″", price: "$950" },
+      { tier: "silver",   label: "Silver",   name: "¼ page ad + ¼ page story",       words: "250",   dim: "4.7″ × 4.7″", price: "$750" },
+      { tier: "bronze",   label: "Bronze",   name: "⅛ page ad + ⅛ page story",       words: "125",   dim: "4.7″ × 2.35″", price: "$625" },
+    ],
+  },
+
+  /* --- ITEM ALL-STARS --- */
+  allStars: {
+    schedule: [
+      { edition: "Winter 25–26", deadline: "Mar 13, 2026", distro: "Mar 24, 2026" },
+      { edition: "Spring 26",    deadline: "Jun 26, 2026", distro: "Jul 11, 2026" },
+      { edition: "Fall 26",      deadline: "Nov 27, 2026", distro: "Dec 9, 2026" },
+    ],
+    rates: [
+      { name: "Outside Back Cover", dim: "9.5″ w × 9.5″ h", price: "$500" },
+      { name: "Full Page",          dim: "9.5″ w × 9.5″ h", price: "$450" },
+      { name: "Double Banner",      dim: "9.5″ w × 4″ h",   price: "$275" },
+      { name: "¼ Page",             dim: "4.7″ w × 4.7″ h", price: "$200" },
+      { name: "Single Banner",      dim: "9.5″ w × 2″ h",   price: "$150" },
+    ],
+  },
+
+  /* --- GRADUATION --- */
+  graduation: {
+    classYear: "2026",
+    deadline: "May 23, 2026",
+    distro: "Jun 11, 2026",
+    sections: [
+      { pub: "The Daily Item",              pages: "24", reach: "~4,000 homes & businesses", note: "" },
+      { pub: "Lynnfield & Peabody Weekly News", pages: "32", reach: "~5,500 Lynnfield homes · ~5,600 Peabody homes", note: "One ad buy places your ad in both supplements." },
+      { pub: "Marblehead Weekly News",      pages: "24", reach: "~9,600 homes & businesses", note: "" },
+    ],
+    rates: [
+      { name: "Full Page",     dim: "9.5″ w × 9.5″ h", price: "$750" },
+      { name: "Double Banner", dim: "9.5″ w × 4″ h",   price: "$325" },
+      { name: "Single Banner", dim: "9.5″ w × 2″ h",   price: "$175" },
+    ],
+  },
+
+  /* --- PEABODY INTERNATIONAL FESTIVAL --- */
+  peabodyFestival: {
+    deadline: "TBD",
+    distro: "TBD",
+    rates: [
+      { name: "Full Page",     dim: "9.5″ w × 9.5″ h", price: "$375" },
+      { name: "Double Banner", dim: "9.5″ w × 3″ h",   price: "$250" },
+      { name: "Single Banner", dim: "9.5″ w × 1.5″ h", price: "$150" },
+    ],
+  },
+
+  /* --- SPRING HAS SPRUNG --- */
+  springHasSprung: {
+    deadline: "April 10, 2026",
+    distro: "April 24, 2026",
+    rates: [
+      { name: "Outside Back Cover", dim: "9.5″ w × 9.5″ h", price: "$800" },
+      { name: "Inside Back Cover",  dim: "9.5″ w × 9.5″ h", price: "$700" },
+      { name: "Inside Front Cover", dim: "9.5″ w × 9.5″ h", price: "$700" },
+      { name: "Full Page",          dim: "9.5″ w × 9.5″ h", price: "$600" },
+      { name: "Half Page",          dim: "9.5″ w × 4.7″ h", price: "$500" },
+      { name: "Quarter Page",       dim: "4.7″ w × 4.7″ h", price: "$350" },
+    ],
+  },
+
+  /* --- TOPSFIELD FAIR --- */
+  topsfieldFair: {
+    deadline: "Sep 18, 2026",
+    distro: "Oct 2, 2026",
+    rates: [
+      { name: "Full Page",      dim: "9.5″ w × 9.5″ h",  price: "$950" },
+      { name: "2/3 Page",       dim: "6.3″ w × 9.5″ h",  price: "$725" },
+      { name: "½ Page",         dim: "9.5″ w × 4″ h",    price: "$550" },
+      { name: "¼ Page Banner",  dim: "9.5″ w × 2.35″ h", price: "$400" },
+      { name: "¼ Page",         dim: "4.7″ w × 4.7″ h",  price: "$375" },
+      { name: "⅛ Page",         dim: "4.7″ w × 2.35″ h", price: "$275" },
+    ],
+  },
+
+  /* --- THANKSGIVING FOOTBALL --- */
+  thanksgivingFootball: {
+    deliveryDate: "Wednesday, Nov. 25, 2026",
+    deadline: "Nov 13, 2026",
+    distro: "Nov 25, 2026",
+    sections: [
+      { pub: "The Daily Item Football",     coverage: "12 schools & opponents", reach: "~4,000 homes & businesses",                              game: "", note: "" },
+      { pub: "Lynnfield & Peabody Football", coverage: "",                       reach: "~5,500 Lynnfield homes · ~5,600 Peabody homes",          game: "Lynnfield vs TBD, Peabody vs TBD", note: "One ad buy places your ad in both supplements." },
+      { pub: "Marblehead Football",          coverage: "",                       reach: "~9,600 homes & businesses",                              game: "Marblehead vs TBD", note: "" },
+    ],
+    rates: [
+      { name: "Full Page",     dim: "9.5″ × 9.5″", price: "$750" },
+      { name: "Double Banner", dim: "9.5″ × 4″",   price: "$350" },
+      { name: "Single Banner", dim: "9.5″ × 2″",   price: "$195" },
+    ],
+  },
+
+};
+
+/* ============================================================
+   PAGE BUILDER — do not edit below this line
+   ============================================================ */
+
+function row(r) {
+  return `<tr><td><span class="ad-name">${r.name}</span><span class="ad-dim">${r.dim}</span></td><td class="ad-price">${r.price}</td></tr>`;
+}
+
+function schedRow(s) {
+  return `<tr><td>${s.edition}</td><td class="date">${s.deadline}</td><td class="date">${s.distro}</td></tr>`;
+}
+
+function distList(keys) {
+  const d = CONFIG.dist;
+  return keys.map(k => `<li><em>${d[k].name}</em> — ${d[k].copies}</li>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* BRAIN TEASERS */
+  document.getElementById('bt-sched').innerHTML = CONFIG.brainTeasers.schedule.map(schedRow).join('');
+  document.getElementById('bt-rates').innerHTML = CONFIG.brainTeasers.rates.map(row).join('');
+  document.getElementById('bt-dist').innerHTML = distList(['marblehead','peabody','lynnfield','item']);
+
+  /* SENIOR ACTIVE LIVING */
+  document.getElementById('sal-sched').innerHTML = CONFIG.seniorLiving.schedule.map(schedRow).join('');
+  document.getElementById('sal-dist').innerHTML = distList(['marblehead','peabody','lynnfield','item']);
+  document.getElementById('sal-packages').innerHTML = CONFIG.seniorLiving.packages.map(p => `
+    <div class="pkg ${p.tier}">
+      <span class="pkg-badge">${p.label}</span>
+      <p class="pkg-name">${p.name}</p>
+      <p class="pkg-dim">${p.words} words &nbsp;·&nbsp; ${p.dim}</p>
+      <p class="pkg-price">${p.price}</p>
+    </div>`).join('');
+
+  /* ITEM ALL-STARS */
+  document.getElementById('as-sched').innerHTML = CONFIG.allStars.schedule.map(schedRow).join('');
+  document.getElementById('as-rates').innerHTML = CONFIG.allStars.rates.map(row).join('');
+
+  /* GRADUATION */
+  const g = CONFIG.graduation;
+  document.getElementById('grad-class').textContent = g.classYear;
+  document.getElementById('grad-tag').textContent = `Annual · ${g.classYear}`;
+  document.getElementById('grad-sched').innerHTML = g.sections.map(s =>
+    `<tr><td>${s.pub}</td><td class="date">${g.deadline}</td><td class="date">${g.distro}</td></tr>`
+  ).join('');
+  document.getElementById('grad-sections').innerHTML = g.sections.map(s => `
+    <div class="fb-section">
+      <div class="fb-section-head">${s.pub}</div>
+      <div class="fb-section-body">
+        <p><strong>Supplement:</strong> ${s.pages}-page special edition</p>
+        <p><strong>Reach:</strong> ${s.reach}</p>
+        ${s.note ? `<p style="font-size:0.78rem;color:var(--gold);margin-top:0.4rem;">${s.note}</p>` : ''}
+      </div>
+    </div>`).join('');
+  document.getElementById('grad-rates').innerHTML = g.rates.map(row).join('');
+
+  /* PEABODY FESTIVAL */
+  const pf = CONFIG.peabodyFestival;
+  document.getElementById('pf-deadline').textContent = pf.deadline;
+  document.getElementById('pf-distro').textContent = pf.distro;
+  document.getElementById('pf-rates').innerHTML = pf.rates.map(row).join('');
+
+  /* SPRING HAS SPRUNG */
+  const shs = CONFIG.springHasSprung;
+  document.getElementById('shs-deadline').textContent = shs.deadline;
+  document.getElementById('shs-distro').textContent = shs.distro;
+  document.getElementById('shs-rates').innerHTML = shs.rates.map(row).join('');
+  document.getElementById('shs-dist').innerHTML = distList(['marblehead','peabody','lynnfield','item']);
+
+  /* TOPSFIELD FAIR */
+  const tf = CONFIG.topsfieldFair;
+  document.getElementById('tf-deadline').textContent = tf.deadline;
+  document.getElementById('tf-distro').textContent = tf.distro;
+  document.getElementById('tf-rates').innerHTML = tf.rates.map(row).join('');
+  document.getElementById('tf-dist').innerHTML = distList(['marblehead','peabody','lynnfield','item']);
+
+  /* THANKSGIVING FOOTBALL */
+  const fb = CONFIG.thanksgivingFootball;
+  document.getElementById('fb-delivery').textContent = fb.deliveryDate;
+  document.getElementById('fb-sections').innerHTML = fb.sections.map(s => `
+    <div class="fb-section">
+      <div class="fb-section-head">${s.pub}</div>
+      <div class="fb-section-body">
+        ${s.coverage ? `<p><strong>Coverage:</strong> ${s.coverage}</p>` : ''}
+        ${s.game ? `<p><strong>Game${s.game.includes(',') ? 's' : ''}:</strong> ${s.game}</p>` : ''}
+        <p><strong>Reach:</strong> ${s.reach}</p>
+        ${s.note ? `<p style="font-size:0.78rem;color:var(--gold);margin-top:0.4rem;">${s.note}</p>` : ''}
+      </div>
+    </div>`).join('');
+  document.getElementById('fb-sched').innerHTML = fb.sections.map(s =>
+    `<tr><td>${s.pub}</td><td class="date">${fb.deadline}</td><td class="date">${fb.distro}</td></tr>`
+  ).join('');
+  document.getElementById('fb-rates').innerHTML = fb.rates.map(row).join('');
+
+});
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1a2744; --navy-light: #253460; --gold: #c8973a; --gold-light: #e8b860;
+    --cream: #faf8f3; --warm-gray: #f2efe8; --text: #2a2620; --text-light: #6b6358;
+    --border: #ddd8cc; --white: #ffffff;
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.6; }
+
+  .site-header { background: var(--navy); padding: 0; position: relative; overflow: hidden; }
+  .header-inner { max-width: 960px; margin: 0 auto; padding: 3rem 2rem 2.5rem; position: relative; z-index: 1; }
+  .header-rule { width: 48px; height: 3px; background: var(--gold); margin-bottom: 1.2rem; }
+  .site-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: white; margin-bottom: 0.5rem; }
+  .site-header .sub { font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 300; letter-spacing: 0.03em; }
+  .header-deco { position: absolute; right: -60px; top: -60px; width: 320px; height: 320px; border: 40px solid rgba(200,151,58,0.12); border-radius: 50%; }
+  .header-deco2 { position: absolute; right: 80px; bottom: -80px; width: 180px; height: 180px; border: 24px solid rgba(200,151,58,0.08); border-radius: 50%; }
+
+  .nav-bar { background: var(--navy-light); border-bottom: 2px solid var(--gold); overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+  .nav-bar-inner { max-width: 960px; margin: 0 auto; padding: 0 2rem; display: flex; }
+  .nav-bar a { display: inline-block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.85rem 1.1rem; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.2s, border-color 0.2s; }
+  .nav-bar a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+  .main { max-width: 960px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: flex; flex-direction: column; gap: 2.5rem; }
+
+  .supp { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: 2px; overflow: hidden; }
+  .supp-head { background: var(--navy); color: white; padding: 1.4rem 1.8rem 1.2rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .supp-head h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: white; line-height: 1.2; }
+  .supp-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--navy); padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .supp-body { padding: 1.6rem 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  .supp-body.single { grid-template-columns: 1fr; }
+  .supp-body.thirds { grid-template-columns: 1.1fr 0.9fr; }
+  .supp-desc { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; grid-column: 1 / -1; }
+
+  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .sched-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .sched-table thead tr { border-bottom: 2px solid var(--navy); }
+  .sched-table th { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); padding: 0 0.75rem 0.5rem 0; text-align: left; }
+  .sched-table td { padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .sched-table tr:last-child td { border-bottom: none; }
+  .sched-table .date { font-variant-numeric: tabular-nums; color: var(--navy); font-weight: 600; }
+
+  .rates-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .rates-table tr { border-bottom: 1px solid var(--border); }
+  .rates-table tr:last-child { border-bottom: none; }
+  .rates-table td { padding: 0.6rem 0; vertical-align: top; }
+  .rates-table .ad-name { font-weight: 600; color: var(--text); padding-right: 0.5rem; }
+  .rates-table .ad-dim { font-size: 0.8rem; color: var(--text-light); display: block; margin-top: 1px; }
+  .rates-table .ad-price { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-align: right; white-space: nowrap; }
+
+  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pkg { border: 1px solid var(--border); border-radius: 2px; padding: 1rem; background: var(--warm-gray); }
+  .pkg-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; padding: 3px 8px; border-radius: 2px; margin-bottom: 0.5rem; }
+  .pkg.platinum { border-color: #b8bcc8; background: #f5f5f8; } .pkg.platinum .pkg-badge { background: #4a4e6a; color: white; }
+  .pkg.gold { border-color: #d4a840; background: #fdf8ed; } .pkg.gold .pkg-badge { background: var(--gold); color: var(--navy); }
+  .pkg.silver { border-color: #b0aaa0; background: #f7f6f3; } .pkg.silver .pkg-badge { background: #888; color: white; }
+  .pkg.bronze { border-color: #b87c4a; background: #fdf5ee; } .pkg.bronze .pkg-badge { background: #9c6030; color: white; }
+  .pkg-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.2rem; }
+  .pkg-dim { font-size: 0.78rem; color: var(--text-light); margin-bottom: 0.5rem; }
+  .pkg-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+
+  .dist-list { list-style: none; font-size: 0.88rem; color: var(--text-light); }
+  .dist-list li { padding: 0.45rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; }
+  .dist-list li:last-child { border-bottom: none; }
+  .dist-list li::before { content: '▸'; color: var(--gold); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+
+  .football-sections { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; grid-column: 1 / -1; }
+  .fb-section { border: 1px solid var(--border); border-radius: 2px; overflow: hidden; font-size: 0.85rem; }
+  .fb-section-head { background: var(--navy); color: white; padding: 0.6rem 0.85rem; font-weight: 600; font-size: 0.8rem; }
+  .fb-section-body { padding: 0.85rem; background: var(--warm-gray); }
+  .fb-section-body p { color: var(--text-light); margin-bottom: 0.4rem; font-size: 0.8rem; }
+  .fb-section-body p:last-child { margin-bottom: 0; }
+  .fb-section-body strong { color: var(--text); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  .full-span { grid-column: 1 / -1; }
+
+  .contact-footer { background: var(--navy); color: white; text-align: center; padding: 2.5rem 2rem; }
+  .contact-footer h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 0.4rem; }
+  .contact-footer p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+  .contact-footer .gold { color: var(--gold-light); }
+
+  @media (max-width: 640px) {
+    .supp-body, .two-col { grid-template-columns: 1fr; }
+    .pkg-grid { grid-template-columns: 1fr; }
+    .football-sections { grid-template-columns: 1fr; }
+    .header-deco, .header-deco2 { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-deco"></div>
+  <div class="header-deco2"></div>
+  <div class="header-inner">
+    <div class="header-rule"></div>
+    <h1>Essex Media Group<br>Special Supplements</h1>
+    <p class="sub">Advertising Opportunities — 2026</p>
+  </div>
+</header>
+
+<nav class="nav-bar" aria-label="Supplements">
+  <div class="nav-bar-inner">
+    <a href="#brain-teasers">Brain Teasers</a>
+    <a href="#senior-living">Senior Active Living</a>
+    <a href="#all-stars">Item All-Stars</a>
+    <a href="#graduation">Graduation</a>
+    <a href="#peabody-festival">Peabody Festival</a>
+    <a href="#spring-has-sprung">Spring Has Sprung</a>
+    <a href="#topsfield">Topsfield Fair</a>
+    <a href="#football">Thanksgiving Football</a>
+  </div>
+</nav>
+
+<div style="background: linear-gradient(135deg, #c8973a 0%, #e8b860 100%); padding: 0;">
+  <div style="max-width:960px; margin:0 auto; padding: 1.5rem 2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+    <div>
+      <p style="font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:#1a2744; margin-bottom:0.2rem;">Save more when you advertise across multiple supplements</p>
+      <p style="font-size:0.85rem; color:#3a2800; opacity:0.85;">Combine placements in 2 or more supplements and your discount is automatically applied.</p>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <div style="background:rgba(255,255,255,0.35); border:1px solid rgba(255,255,255,0.5); border-radius:4px; padding:0.6rem 1rem; text-align:center;">
+        <p style="font-size:1.3rem; font-weight:700; color:#1a2744; font-family:'Playfair Display',serif;">10%</p>
+        <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#3a2800;">2 supplements</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.45); border:1px solid rgba(255,255,255,0.6); border-radius:4px; padding:0.6rem 1rem; text-align:center;">
+        <p style="font-size:1.3rem; font-weight:700; color:#1a2744; font-family:'Playfair Display',serif;">15%</p>
+        <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#3a2800;">3 supplements</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:4px; padding:0.6rem 1rem; text-align:center;">
+        <p style="font-size:1.3rem; font-weight:700; color:#1a2744; font-family:'Playfair Display',serif;">20%</p>
+        <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#3a2800;">4+ supplements</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#eaf3de; border-bottom: 2px solid #639922;">
+  <div style="max-width:960px; margin:0 auto; padding:0.9rem 2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <div style="background:#639922; color:white; font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border-radius:2px; white-space:nowrap;">Nonprofit Discount</div>
+    <p style="font-size:0.88rem; color:#27500a;">Qualifying nonprofit organizations receive a <strong>30% discount</strong> on all supplement advertising. Contact your representative with proof of nonprofit status to apply.</p>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- BRAIN TEASERS -->
+  <section class="supp" id="brain-teasers">
+    <div class="supp-head">
+      <h2>Brain Teasers</h2>
+      <span class="supp-tag">3× Per Year</span>
+    </div>
+    <div class="supp-body" style="grid-template-columns: 1fr 1fr;">
+      <p class="supp-desc">Three times a year, we publish a special Brain Teasers supplement filled with crossword puzzles, word searches, and sudoku puzzles — reaching more than 24,000 homes and businesses. Puzzle sections have a long shelf life: readers revisit them multiple times over several weeks, giving your ad extended visibility alongside content they're actively engaged with. A digital edition is also available on Itemlive.com.</p>
+      <div class="full-span">
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list" id="bt-dist"></ul>
+      </div>
+      <div>
+        <p class="sec-label">Publication Schedule</p>
+        <table class="sched-table">
+          <thead><tr><th>Edition</th><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+          <tbody id="bt-sched"></tbody>
+        </table>
+      </div>
+      <div>
+        <p class="sec-label">Ad Sizes &amp; Rates</p>
+        <table class="rates-table"><tbody id="bt-rates"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SENIOR ACTIVE LIVING -->
+  <section class="supp" id="senior-living">
+    <div class="supp-head">
+      <h2>Senior <em>Active</em> Living</h2>
+      <span class="supp-tag">4× Per Year</span>
+    </div>
+    <div class="supp-body single">
+      <div>
+        <p style="font-size:0.92rem; color:var(--text-light); line-height:1.7; margin-bottom:1rem;">Engage with the 55+ community by featuring your business in our exclusive Senior Active Living supplement — a targeted opportunity to connect with an influential audience reaching more than 24,000 homes across the North Shore. A digital edition is also available on Itemlive.com.</p>
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list" id="sal-dist" style="margin-bottom:1rem;"></ul>
+        <div class="two-col" style="margin-bottom:1.5rem;">
+          <div>
+            <p class="sec-label">Publication Schedule</p>
+            <table class="sched-table">
+              <thead><tr><th>Edition</th><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+              <tbody id="sal-sched"></tbody>
+            </table>
+          </div>
+          <div>
+            <p class="sec-label">Bonus Exposure</p>
+            <div style="background:var(--warm-gray); border:1px solid var(--border); border-radius:8px; padding:1rem; font-size:0.85rem; color:var(--text-light); line-height:1.6;">
+              <p style="margin-bottom:0.5rem;">Your ad will also be featured in the <strong style="color:var(--text);">Senior Directory</strong>, running for <strong style="color:var(--text);">4 consecutive Thursdays</strong> in <em>The Daily Item</em>, <em>Peabody Weekly News</em>, <em>Lynnfield Weekly News</em>, and <em>Marblehead Weekly News</em>.</p>
+              <p>Also available on Itemlive.com in a PDF page-turn format for <strong style="color:var(--text);">five consecutive weeks</strong>. Itemlive.com averages <strong style="color:var(--text);">8,000 visits per day</strong> and <strong style="color:var(--text);">750,000 monthly page views</strong>.</p>
+            </div>
+          </div>
+        </div>
+        <p class="sec-label">Advertising Packages</p>
+        <div class="pkg-grid" id="sal-packages"></div>
+        <p style="font-size:0.85rem; color:var(--text-light); margin-top:1.2rem; padding:0.75rem 1rem; background:var(--warm-gray); border-left:3px solid var(--gold);">More than a one-time ad — this is a <strong style="color:var(--text);">strategic five-week advertising campaign</strong>. Maximize your reach and impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITEM ALL-STARS -->
+  <section class="supp" id="all-stars">
+    <div class="supp-head">
+      <h2>Item All-Stars</h2>
+      <span class="supp-tag">3× Per Year</span>
+    </div>
+    <div class="supp-body thirds">
+      <div>
+        <p class="supp-desc" style="grid-column: unset;">Item All-Stars honors both boys and girls athletes who have achieved all-star status within our readership area, as selected by our sports staff. We host a seasonal ceremony three times a year, with each supplement aligning with those events — held in December, March, and June.</p>
+        <br>
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list">
+          <li><em>The Daily Item</em> — 4,000 copies across 7 North Shore communities</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--text-light); margin-top:0.75rem;">A digital edition is also available on Itemlive.com.</p>
+        <br>
+        <p class="sec-label">Publication Schedule</p>
+        <table class="sched-table">
+          <thead><tr><th>Edition</th><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+          <tbody id="as-sched"></tbody>
+        </table>
+      </div>
+      <div>
+        <p class="sec-label">Ad Sizes &amp; Rates</p>
+        <table class="rates-table"><tbody id="as-rates"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRADUATION -->
+  <section class="supp" id="graduation">
+    <div class="supp-head">
+      <h2>Graduation Supplements</h2>
+      <span class="supp-tag" id="grad-tag"></span>
+    </div>
+    <div class="supp-body">
+      <p class="supp-desc">Help celebrate the Class of <span id="grad-class"></span>. We are publishing special graduation supplements inserted in all four of our newspapers — each featuring photos of all graduates and coverage of commencement activities. Parents, grandparents, teachers, and students will keep these supplements as keepsakes, giving your ad lasting visibility. A digital edition is also available on Itemlive.com.</p>
+      <div class="football-sections full-span" id="grad-sections"></div>
+      <div class="full-span two-col">
+        <div>
+          <p class="sec-label">Publication Schedule</p>
+          <table class="sched-table">
+            <thead><tr><th>Edition</th><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+            <tbody id="grad-sched"></tbody>
+          </table>
+        </div>
+        <div>
+          <p class="sec-label">Ad Sizes &amp; Rates — All Sections</p>
+          <table class="rates-table"><tbody id="grad-rates"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEABODY INTERNATIONAL FESTIVAL -->
+  <section class="supp" id="peabody-festival">
+    <div class="supp-head">
+      <h2>Peabody International Festival</h2>
+      <span class="supp-tag">Annual Supplement</span>
+    </div>
+    <div class="supp-body thirds">
+      <div>
+        <p class="supp-desc" style="grid-column: unset;">Help celebrate Peabody's Annual International Festival. Essex Media Group will publish a special pull-out section previewing the festival — including a schedule of events, festival map, photos, and stories. Inserted inside <em>Peabody Weekly News</em> and <em>Lynnfield Weekly News</em>, reaching more than 11,000 homes and businesses. Copies will also be distributed at the festival. A digital edition is also available on Itemlive.com.</p>
+        <br>
+        <p class="sec-label">Publication Schedule</p>
+        <table class="sched-table">
+          <thead><tr><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+          <tbody><tr><td class="date" id="pf-deadline"></td><td class="date" id="pf-distro"></td></tr></tbody>
+        </table>
+        <br>
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list">
+          <li><em>Peabody Weekly News</em> — 5,600 homes</li>
+          <li><em>Lynnfield Weekly News</em> — 5,500 homes</li>
+          <li>Distributed at the festival</li>
+        </ul>
+      </div>
+      <div>
+        <p class="sec-label">Ad Sizes &amp; Rates</p>
+        <table class="rates-table"><tbody id="pf-rates"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPRING HAS SPRUNG -->
+  <section class="supp" id="spring-has-sprung">
+    <div class="supp-head">
+      <h2>Spring Has Sprung</h2>
+      <span class="supp-tag">Annual Supplement</span>
+    </div>
+    <div class="supp-body thirds">
+      <div>
+        <p class="supp-desc" style="grid-column: unset;">Let our readers know your business is in full bloom. Our <em>Spring Has Sprung</em> supplement reaches more than 24,000 households across the North Shore, distributed as an insert within <em>The Daily Item</em>, <em>Lynnfield Weekly News</em>, <em>Marblehead Weekly News</em>, and <em>Peabody Weekly News</em>. A digital edition is also available on Itemlive.com.</p>
+        <br>
+        <p class="sec-label">Publication Schedule</p>
+        <table class="sched-table">
+          <thead><tr><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+          <tbody><tr><td class="date" id="shs-deadline"></td><td class="date" id="shs-distro"></td></tr></tbody>
+        </table>
+        <br>
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list" id="shs-dist"></ul>
+      </div>
+      <div>
+        <p class="sec-label">Ad Sizes &amp; Rates</p>
+        <table class="rates-table"><tbody id="shs-rates"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPSFIELD FAIR -->
+  <section class="supp" id="topsfield">
+    <div class="supp-head">
+      <h2>Topsfield Fair Guide</h2>
+      <span class="supp-tag">Annual Guide</span>
+    </div>
+    <div class="supp-body thirds">
+      <div>
+        <p class="supp-desc" style="grid-column: unset;">Essex Media Group's official Topsfield Fair Guide returns — 11" × 11," full color, minimum 48 pages — reaching more than 24,000 households across the North Shore, distributed as an insert within <em>The Daily Item</em>, <em>Lynnfield Weekly News</em>, <em>Marblehead Weekly News</em>, and <em>Peabody Weekly News</em>. A digital edition is also available on Itemlive.com.</p>
+        <br>
+        <p class="sec-label">Publication Schedule</p>
+        <table class="sched-table">
+          <thead><tr><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+          <tbody><tr><td class="date" id="tf-deadline"></td><td class="date" id="tf-distro"></td></tr></tbody>
+        </table>
+        <br>
+        <p class="sec-label">Distribution</p>
+        <ul class="dist-list" id="tf-dist"></ul>
+      </div>
+      <div>
+        <p class="sec-label">Ad Sizes &amp; Rates</p>
+        <table class="rates-table"><tbody id="tf-rates"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKSGIVING FOOTBALL -->
+  <section class="supp" id="football">
+    <div class="supp-head">
+      <h2>Thanksgiving Football Supplements</h2>
+      <span class="supp-tag">Annual</span>
+    </div>
+    <div class="supp-body">
+      <p class="supp-desc">We will be publishing four high school Thanksgiving Football supplements — one for each local newspaper — inserted and delivered to homes on <span id="fb-delivery"></span>. Each section features star players, team spotlights, game previews, history, results, and school traditions. Combined reach: <strong>more than 24,000 homes</strong>. A digital edition is also available on Itemlive.com.</p>
+      <div class="football-sections" id="fb-sections"></div>
+      <div class="full-span two-col">
+        <div>
+          <p class="sec-label">Publication Schedule</p>
+          <table class="sched-table">
+            <thead><tr><th>Edition</th><th>Ad Deadline</th><th>Distribution</th></tr></thead>
+            <tbody id="fb-sched"></tbody>
+          </table>
+        </div>
+        <div>
+          <p class="sec-label">Ad Sizes &amp; Rates — All Sections</p>
+          <table class="rates-table"><tbody id="fb-rates"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact-footer">
+  <h3>Ready to advertise?</h3>
+  <p>Contact your Essex Media Group representative for more information on<br> magazines, newspaper, custom packages, and insertion orders.</p>
+  Sam Deeb: <a href="mailto:sam@itemlive.com" style="margin-top:1rem;" class="gold">sam@itemlive.com</a> - 781-261-0757<br>
+  <a href="itemlive.com" target="_blank style="margin-top:1rem;" class="gold">itemlive.com</a>
+</footer>
+
+</body>
+</html>

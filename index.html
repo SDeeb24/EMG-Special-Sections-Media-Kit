@@ -225,7 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* THANKSGIVING FOOTBALL */
   const fb = CONFIG.thanksgivingFootball;
-  document.getElementById('fb-delivery').textContent = fb.deliveryDate;
   document.getElementById('fb-sections').innerHTML = fb.sections.map(s => `
     <div class="fb-section">
       <div class="fb-section-head">${s.pub}</div>
